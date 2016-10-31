@@ -1,0 +1,34 @@
+version: '2'
+services:
+  c-pulse:
+    build:
+      context: pulse
+      dockerfile: Dockerfile
+    env_file: .pulse-env
+    volumes:
+      - ./pulse:/opt/pulse
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    networks:
+      - pulse
+  c-domain-scan:
+    build:
+      context: domain-scan
+      dockerfile: Dockerfile
+    env_file: .domain-scan-env
+    volumes:
+      - ./domain-scan/:/home/scanner
+      - /var/run/docker.sock:/var/run/docker.sock
+    entrypoint: /bin/bash
+    restart: always
+    networks:
+      - pulse
+  c-pshtt:
+    build:
+      context: pshtt
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - pulse
+networks:
+  pulse:

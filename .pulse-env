@@ -1,0 +1,1 @@
+DOMAIN_SCAN_PATH=docker run -e "PSHTT_PATH=docker run --rm -e USER_ID=1042 -e GROUP_ID=1042 -v /home/sicco/develop/docker-pulse/domain-scan/:/home/scanner -v /home/sicco/develop/docker-pulse/pshtt/data/:/data dockerpulse_c-pshtt" -v /home/sicco/develop/docker-pulse/pulse/data/output/:/output -v /var/run/docker.sock:/var/run/docker.sock --rm dockerpulse_c-domain-scan
