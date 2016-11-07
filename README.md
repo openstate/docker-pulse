@@ -1,7 +1,9 @@
 # To install and start the Pulse frontend
-- clone Pulse: `git clone git@github.com:18F/pulse.git`
-- clone domain-scan: `git clone git@github.com:18F/domain-scan.git`
-- clone pshtt: `git clone git@github.com:dhs-ncats/pshtt.git`
+- First clone this repository: git@github.com:openstate/docker-pulse.git
+- Then clone its dependencies:
+  - clone Pulse: `git clone git@github.com:18F/pulse.git`
+  - clone domain-scan: `git clone git@github.com:18F/domain-scan.git`
+  - clone pshtt: `git clone git@github.com:dhs-ncats/pshtt.git`
 - `docker-compose build`
 - `docker-compose up -d c-pulse`
 
