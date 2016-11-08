@@ -15,7 +15,6 @@ services:
     build:
       context: domain-scan
       dockerfile: Dockerfile
-    env_file: .domain-scan-env
     volumes:
       - ./domain-scan/:/home/scanner
       - /var/run/docker.sock:/var/run/docker.sock
