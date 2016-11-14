@@ -2,7 +2,7 @@ version: '2'
 services:
   c-pulse:
     build:
-      context: pulse
+      context: ./pulse
       dockerfile: Dockerfile
     env_file: .pulse-env
     volumes:
@@ -10,10 +10,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
     networks:
+      - nginx-load-balancer
       - pulse
   c-domain-scan:
     build:
-      context: domain-scan
+      context: ./domain-scan
       dockerfile: Dockerfile
     volumes:
       - ./domain-scan/:/home/scanner
@@ -24,10 +25,13 @@ services:
       - pulse
   c-pshtt:
     build:
-      context: pshtt
+      context: ./pshtt
       dockerfile: Dockerfile
     restart: always
     networks:
       - pulse
 networks:
   pulse:
+  nginx-load-balancer:
+    external:
+      name: docker_nginx-load-balancer

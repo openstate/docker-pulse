@@ -1,6 +1,12 @@
 # To install and start the Pulse frontend
 - First clone this repository: `git clone git@github.com:openstate/docker-pulse.git`
 - `cd docker-pulse`
+- In `docker-compose.yml` you might want to remove the line containing `- nginx-load-balancer` listed in the networks section of the `c-pulse` service as well as the last three lines (shown below) as they are specific to our setup and not needed for general usage:
+```
+  nginx-load-balancer:
+    external:
+      name: docker_nginx-load-balancer
+```
 - Then clone its dependencies:
   - clone Pulse: `git clone git@github.com:18F/pulse.git`
   - clone domain-scan: `git clone git@github.com:18F/domain-scan.git`
