@@ -11,6 +11,7 @@
   - clone Pulse: `git clone git@github.com:openstate/pulse.git`
   - clone domain-scan: `git clone git@github.com:siccovansas/domain-scan.git`
   - clone pshtt: `git clone git@github.com:dhs-ncats/pshtt.git`
+- This repository is currently in development so not everything is automated. Before starting you need to edit `.pulse-env` to change the three `/home/projects` occurrences to the path where you cloned this repository.
 - `docker-compose build`
 - `docker-compose up -d c-pulse`
 
