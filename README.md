@@ -8,8 +8,8 @@
       name: docker_nginx-load-balancer
 ```
 - Then clone its dependencies:
-  - clone Pulse: `git clone git@github.com:18F/pulse.git`
-  - clone domain-scan: `git clone git@github.com:18F/domain-scan.git`
+  - clone Pulse: `git clone git@github.com:openstate/pulse.git`
+  - clone domain-scan: `git clone git@github.com:siccovansas/domain-scan.git`
   - clone pshtt: `git clone git@github.com:dhs-ncats/pshtt.git`
 - `docker-compose build`
 - `docker-compose up -d c-pulse`
